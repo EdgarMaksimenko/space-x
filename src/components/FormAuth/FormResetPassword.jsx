@@ -6,12 +6,11 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import { db, auth } from '../../firebase';
 import { sendPasswordResetEmail  } from "firebase/auth";
 import { useDispatch } from 'react-redux';
-import { initializeUser } from '../../store/slices/userProfileSlice';
 import { showMessage } from '../../store/slices/popUpSlice';
 import { useNavigate } from 'react-router-dom';
 
 
-  const FormLogin = () => {
+  const FormResetPassword = () => {
   const dispatch = useDispatch(); 
   const navigate = useNavigate();
   const [usrData] = useCollection(collection(db,'userData'));
@@ -32,8 +31,7 @@ import { useNavigate } from 'react-router-dom';
         navigate('/login');
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        console.log(error.message);
         dispatch(showMessage('Something went wrong'));
       });
       reset();
@@ -64,4 +62,4 @@ import { useNavigate } from 'react-router-dom';
   )
 };
 
-export default FormLogin;
+export default FormResetPassword;

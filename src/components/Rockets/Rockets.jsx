@@ -11,6 +11,7 @@ const Rockets = () => {
 
   React.useEffect(() => {
     dispatch(getRocketsData());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   if (isLoading && localStorage.rocketsData){
@@ -21,7 +22,7 @@ const Rockets = () => {
         {localData.map(el => (
           <div key={el.id} className={styles.rockets__item}>
             <NavLink to={`/rocket/${el.id}`} >
-              <img src={el.images[0]} alt="rocket-image" />
+              <img src={el.images[0]} alt="rocket" />
               <p>{el.name}</p>
             </NavLink>
           </div>
@@ -34,7 +35,7 @@ const Rockets = () => {
         {rocketsData.map(el => (
           <div key={el.id} className={styles.rockets__item}>
             <NavLink to={`/rocket/${el.id}`} >
-              <img src={el.flickr_images[0]} alt="rocket-image" />
+              <img src={el.flickr_images[0]} alt="rocket" />
               <p>{el.name}</p>
             </NavLink>
           </div>

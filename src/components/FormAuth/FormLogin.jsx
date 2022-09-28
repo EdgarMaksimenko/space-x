@@ -39,8 +39,7 @@ const FormLogin = () => {
         navigate('/');
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        console.log(error.message);
         dispatch(showMessage('Wrong login or password'));
       });
       reset();
@@ -56,7 +55,7 @@ const FormLogin = () => {
               required: 'This field is required',
               pattern: {
                 value: /^((([0-9A-Za-z]{1}[-0-9A-z\.]{0,30}[0-9A-Za-z]?)|([0-9А-Яа-я]{1}[-0-9А-я\.]{0,30}[0-9А-Яа-я]?))@([-A-Za-z]{1,}\.){1,}[-A-Za-z]{2,})$/,
-                message: 'Please enter valid email'
+                message: 'Please enter valid email',
               }
             })}
             placeholder='Email'
