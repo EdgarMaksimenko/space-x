@@ -1,9 +1,7 @@
 import styles from './Form.module.css';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { collection } from 'firebase/firestore';
-import { useCollection } from 'react-firebase-hooks/firestore';
-import { db, auth } from '../../firebase';
+import { auth } from '../../firebase';
 import { sendPasswordResetEmail  } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { showMessage } from '../../store/slices/popUpSlice';
