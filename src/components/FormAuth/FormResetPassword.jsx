@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
   const FormResetPassword = () => {
   const dispatch = useDispatch(); 
   const navigate = useNavigate();
-  const [usrData] = useCollection(collection(db,'userData'));
+
   const {
       register,
       handleSubmit,
